@@ -4,9 +4,9 @@ import StartGame from './component/startGame';
 
 function App() {
 	return (
-		<>
+		<div className="container">
 			<StartGame />
-		</>
+		</div>
 	);
 }
 

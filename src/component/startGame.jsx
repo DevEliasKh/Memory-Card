@@ -4,9 +4,20 @@
 import '../style/startGame.css';
 
 function StartGame() {
+	function playGame() {}
 	return (
-		<div className="container">
-			<div className="header"></div>
+		<div className="start-page">
+			<header>
+				<img
+					src="https://www.freepnglogos.com/uploads/rick-and-morty-png/list-rick-and-morty-episodes-wikipedia-24.png"
+					width="200"
+					alt="rick and morty"
+					className="logo"
+				/>
+			</header>
+			<button className="start-btn" onClick={playGame}>
+				Start Game
+			</button>
 		</div>
 	);
 }

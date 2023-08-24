@@ -1,7 +1,32 @@
-/* .container {
-	background: url('https://wallpaperaccess.com/full/3896910.jpg') no-repeat
-		bottom center fixed;
-	background-size: cover;
-	width: 100vw;
-	height: 100vh;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+
+.start-btn {
+	font-family: 'Gluten', cursive;
+	font-size: 34px;
+	padding: 0.7rem;
+	border-radius: 0.5rem;
+	color: #fff;
+	background-color: #01b9d1;
+	border: none;
+	outline: none;
+}
+
+.start-btn:hover {
+	transform: scale(1.1);
+	border-radius: 1rem;
+}
+
+.logo {
+	width: 60rem;
+	height: auto;
+}
+
+.start-page {
+	width: 100dvw;
+	height: 100dvh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

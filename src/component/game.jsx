@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Tilt from 'react-parallax-tilt';
+import '../style/game.css';
 
 function MakeCard(character) {
 	return (
@@ -22,13 +23,15 @@ function Game() {
 			mode: 'cors',
 		});
 		const character = response.json();
-		character.then((character) => {
-			setCharacter(character.results);
-		});
+		character
+			.then((character) => {
+				setCharacter(character.results);
+			})
+			.catch(console.log('ERROR!'));
 	}
-
+	const newChar = character.slice(0, 3);
 	useEffect(() => getCharacter, []);
-	return <div className="cards">{MakeCard(character[0])}</div>;
+	return <div className="cards">{newChar.map((item) => MakeCard(item))}</div>;
 }
 
 export default Game;

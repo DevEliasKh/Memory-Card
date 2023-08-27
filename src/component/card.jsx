@@ -5,7 +5,10 @@ import '../style/card.css';
 function MakeCard(character, handleClick) {
 	return (
 		<Tilt key={character.id}>
-			<div className="card" onClick={handleClick} id={character.id}>
+			<div
+				className="card"
+				onClick={() => handleClick(character.id)}
+				id={character.id}>
 				<img src={character.image} alt={character.name} />
 				<div className="title">{character.name}</div>
 			</div>

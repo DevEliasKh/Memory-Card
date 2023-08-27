@@ -8,7 +8,7 @@ function App() {
 	const [bestScore, setBestScore] = useState(0);
 
 	function Game() {
-		const [clicked, setClicked] = useState(false);
+		const [clickedChar, setClickedChar] = useState([]);
 		const [character, setCharacter] = useState([]);
 
 		async function getCharacter() {
@@ -25,17 +25,29 @@ function App() {
 		const newChar = character.slice(0, 12);
 		useEffect(() => getCharacter, []);
 
-		function handleClick() {
-			// const clickedChar = [];
-			// function addCharToList() {}
+		function handleClick(i) {
+			if (clickedChar.indexOf(i) === -1) {
+				setClickedChar([...clickedChar, i]);
+				addScore();
+				shuffleCard();
+			} else {
+				resetGame();
+				console.log('again');
+			}
 		}
 
-		// function resetGame() {
-		// 	setScore(0);
-		// 	shuffleCard();
-		// }
+		function resetGame() {
+			setScore(0);
+			shuffleCard();
+		}
 
-		// function shuffleCard() {}
+		function shuffleCard() {}
+		function addScore() {
+			setScore(score + 1);
+			if (score + 1 > bestScore) {
+				setBestScore(score + 1);
+			}
+		}
 
 		return (
 			<div className="cards">

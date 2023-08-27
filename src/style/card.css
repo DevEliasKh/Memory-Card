@@ -1,14 +1,13 @@
 .card {
 	background-color: #cbd5e1;
-	/* padding: 1rem; */
 	border-radius: 1rem;
 }
 .cards {
-	padding-top: 10rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
+	flex-wrap: wrap;
 }
 
 img {

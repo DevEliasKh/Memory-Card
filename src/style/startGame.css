@@ -1,31 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
 
-.start-btn {
-	font-family: 'Gluten', cursive;
-	font-size: 34px;
-	padding: 0.7rem;
-	border-radius: 0.5rem;
-	color: #fff;
-	background-color: #01b9d1;
-	border: none;
-	outline: none;
-}
-
-.start-btn:hover {
-	transform: scale(1.1);
-	border-radius: 1rem;
-}
-
 .logo {
-	width: 60rem;
+	width: 10rem;
 	height: auto;
 }
 
 .start-page {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 
-	gap: 4rem;
+	padding: 1rem;
+}
+
+.score {
+	border: solid 3px #01b9d1;
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: #01b9d1;
 }

@@ -1,10 +1,6 @@
-//todo put background and game title
-//todo button to start the game
-
 import '../style/startGame.css';
 
-function StartGame() {
-	function playGame() {}
+function StartGame(score, bestScore) {
 	return (
 		<div className="start-page">
 			<header>
@@ -15,9 +11,10 @@ function StartGame() {
 					className="logo"
 				/>
 			</header>
-			<button className="start-btn" onClick={playGame}>
-				Start Game
-			</button>
+			<div className="score">
+				<div className="current-score">Current Score : {score}</div>
+				<div className="best-score">Best Score : {bestScore}</div>
+			</div>
 		</div>
 	);
 }

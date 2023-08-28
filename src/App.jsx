@@ -12,7 +12,9 @@ function App() {
 		const [character, setCharacter] = useState([]);
 
 		async function getCharacter() {
-			const response = await fetch('https://rickandmortyapi.com/api/character');
+			const response = await fetch('https://rickandmortyapi.com/api/character', {
+				mode: 'cors',
+			});
 			const character = response.json();
 			character
 				.then((character) => {

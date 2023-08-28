@@ -23,25 +23,31 @@ function App() {
 				.catch(console.log('ERROR!'));
 		}
 		const newChar = character.slice(0, 12);
+		const shuffleChar = shuffleCard(newChar);
 		useEffect(() => getCharacter, []);
 
 		function handleClick(i) {
 			if (clickedChar.indexOf(i) === -1) {
 				setClickedChar([...clickedChar, i]);
 				addScore();
-				shuffleCard();
 			} else {
 				resetGame();
-				console.log('again');
 			}
 		}
 
 		function resetGame() {
+			setClickedChar([]);
 			setScore(0);
-			shuffleCard();
 		}
 
-		function shuffleCard() {}
+		function shuffleCard(arr) {
+			let shuffledArray = arr.slice();
+			for (let i = 0; i < arr.length; i++) {
+				const j = Math.floor(Math.random() * arr.length);
+				[shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+			}
+			return shuffledArray;
+		}
 		function addScore() {
 			setScore(score + 1);
 			if (score + 1 > bestScore) {
@@ -51,7 +57,7 @@ function App() {
 
 		return (
 			<div className="cards">
-				{newChar.map((item) => MakeCard(item, handleClick))}
+				{shuffleChar.map((item) => MakeCard(item, handleClick))}
 			</div>
 		);
 	}

@@ -24,7 +24,10 @@ function App() {
 		}
 		const newChar = character.slice(0, 12);
 		const shuffleChar = shuffleCard(newChar);
-		useEffect(() => getCharacter, []);
+		// useEffect(() => getCharacter, []);
+		useEffect(() => {
+			getCharacter();
+		}, []);
 
 		function handleClick(i) {
 			if (clickedChar.indexOf(i) === -1) {
